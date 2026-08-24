@@ -38,11 +38,7 @@ jobs:
         uses: nrwl/nx-set-shas@3e9ad7370203c1e93d109be57f3b72eb0eb511b1 # v4.4.0
         with:
           main-branch-name: main
-      - name: Debug tsc directly
-        run: pnpm --filter @tanstack/devtools exec tsc --pretty false
       - name: Run Checks
-        env:
-          NX_NO_CLOUD: 'true'
         run: pnpm run test:pr
   e2e:
     name: E2e
